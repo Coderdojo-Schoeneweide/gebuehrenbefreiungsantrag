@@ -1,0 +1,89 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[a4paper, margin=2cm]{geometry}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{textcomp}
+
+\renewcommand*\familydefault{\sfdefault}
+\pagenumbering{gobble}
+
+\newcommand{\hint}[1]{{\footnotesize\color{gray}#1}}
+\renewcommand{\MakeTextField}[2]{{\vbox to #2{\vfill\hbox to #1{\hrulefill}}}}
+\newlength{\tfl}%
+\newcommand{\TextFieldFill}[2][]{%
+    \setlength{\tfl}{\linewidth}%
+    \settowidth{\dimen0}{#2}%
+    \addtolength{\tfl}{-\dimen0}%
+    \addtolength{\tfl}{-1em}%
+    \TextField[#1, bordercolor={}, backgroundcolor={}, width=\tfl]{#2}%
+}
+
+\begin{document}
+
+    \textbf{\Large Ausstellung eines erweiterten Führungszeugnis für die ehrenamtliche, unentgeltliche Tätigkeit}
+
+    \textbf{\large Antrag auf Gebührenbefreiung}
+
+    \vspace{1cm}
+
+    Sehr geehrte Damen und Herren,
+
+    \smallskip
+
+    der Verein CoderDojo Deutschland e.V.\ ermöglicht Kindern und Jugendlichen einen spielerischen Einstieg in die Informatik und hat sich dem Kinderschutz verpflichtet.
+    Wir sind ein als gemeinnützig anerkannter Verein.
+
+    \bigskip
+
+    \TextFieldFill[name=name]{\raisebox{0.4em}{\hint{(Vor- und Nachname(n))}}} ,
+
+    \raisebox{0.4em}{geboren am \hint{(Tag.Monat.Jahr)}}
+    \TextField[bordercolor={}, backgroundcolor={}, width=1cm, maxlen=2, name=day]{} .
+    \TextField[bordercolor={}, backgroundcolor={}, width=1cm, maxlen=2, name=month]{} .
+    \TextField[bordercolor={}, backgroundcolor={}, width=2cm, maxlen=4, name=year]{} ,
+
+    wohnhaft \hint{(vollständige Adresse)}
+
+    \TextFieldFill[name=address]{}
+
+    ist bei uns ehrenamtlich und unentgeltlich als Dojo-Leiter:in tätig.
+    Zu dieser Tätigkeit gehört die Betreuung und Ausbildung von Minderjährigen (§ 30a Abs.\ 1 Nr.\ 2b BZRG).
+
+    Aus diesem Grund bitten wir, mit Bezug auf das Bundeszentralregistergesetz (§ 30a), um Erstellung eines erweiterten Führungszeugnisses zur Vorlage bei uns.
+
+    Unter Hinweis auf die Richtlinien des Bundesamtes für Justiz beantragen wir zugleich die Gebührenfreiheit.
+
+    Wir bedanken uns für Ihre Unterstützung.
+
+    \vspace{1cm}
+
+    Mit freundlichen Grüßen,
+
+    Linda Fernsel,\\
+    {
+        \small
+        Stellvertretende Vorsitzende\\
+        CoderDojo Deutschland e.V.\\
+        Registergericht: Amtsgericht Berlin (Charlottenburg) | Registernummer: VR 35813 B
+    }
+
+    \vspace{2cm}
+
+    \begin{minipage}{0.4\textwidth}
+        \TextFieldFill[name=dateplace]{}
+        \hint{(Ort, Datum)}
+    \end{minipage}
+    \begin{minipage}{0.6\textwidth}
+        \vspace{1.2em}
+        \hrulefill
+
+        \hint{(Unterschrift)}
+    \end{minipage}
+\end{document}
